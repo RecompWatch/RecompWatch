@@ -1,6 +1,8 @@
-/* RecompWatch × PayGate.to — no-login crypto checkout, straight from the browser.
-   Same calls as PayGate's official SDK (hosted multi-coin mode): POST /crypto/multi-hosted-wallet.php
-   → open checkout.paygate.to/crypto/hosted.php?payment_token=…  No account, no API key, no KYC.
+/* RecompWatch × PayGate.to — no-login checkout, straight from the browser. No account, no API key, no KYC.
+   TWO ways to pay on every button:
+   • CARD / Apple Pay / Google Pay / local methods (all providers PayGate has active): GET /control/wallet.php
+     → open checkout.paygate.to/pay.php?provider=hosted  (money lands as USDC on Polygon in cardWallet / wallets.evm)
+   • CRYPTO (hosted multi-coin): POST /crypto/multi-hosted-wallet.php → checkout.paygate.to/crypto/hosted.php
    EVERY payment on the site (website donation, project donations, paid files) uses the wallets below. */
 (()=>{
 const CFG=window.RW_PAY={
@@ -13,7 +15,8 @@ const CFG=window.RW_PAY={
     ltc:'', doge:'', bitcoincash:'', ton:'', xmr:'494JGFr6rkpddPY1tFQAQk8VZ7zMynnqNa5AhNKzaD7i9jWQLTzzAL6Yp8UvBZo3SFNCmE5xL5LfT9CH3PtFcqKK8eUXUe4', zec:'', xrp:''
   },
   /* ▲▲▲ nothing else needs touching ▲▲▲ */
-  apiHost:'dry-morning-3c35.cantoosimen5.workers.dev',            // swap for your free dedicated endpoint (api-yourshop-….paygate.to) if you ever get blocked
+  cardWallet:'',   // CARD payouts: a USDC-on-Polygon wallet. Leave '' to reuse wallets.evm (same 0x… address works on Polygon)
+  apiHost:'dry-morning-3c35.cantoosimen5.workers.dev',  
   checkoutHost:'checkout.paygate.to',
   currency:'USD', presets:[3,5,10,25], minAmount:1, addFees:true,   // addFees: buyer pays the network fee
   theme:'#2ee6a6',
@@ -22,7 +25,9 @@ const CFG=window.RW_PAY={
 const E=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const usd=n=>'$'+(Math.round(n*100)/100).toFixed(2).replace(/\.00$/,'');
 const wallets=()=>Object.fromEntries(Object.entries(CFG.wallets).map(([k,v])=>[k,String(v||'').trim()]).filter(x=>x[1]));
-const ready=()=>Object.keys(wallets()).length>0;
+const cardWallet=()=>String(CFG.cardWallet||CFG.wallets.evm||'').trim();
+const cryptoReady=()=>Object.keys(wallets()).length>0;
+const ready=()=>cryptoReady()||!!cardWallet();
 const rnd=()=>Array.from(crypto.getRandomValues(new Uint8Array(5)),b=>b.toString(16).padStart(2,'0')).join('');
 const load=()=>{try{return JSON.parse(localStorage.getItem('rw-orders')||'[]')}catch{return[]}};
 const store=a=>{try{localStorage.setItem('rw-orders',JSON.stringify(a.slice(-60)))}catch{}};
@@ -31,13 +36,23 @@ const isPaid=ref=>load().some(o=>o.ref===ref&&o.paid);
 const pending=ref=>load().some(o=>o.ref===ref&&!o.paid&&Date.now()-o.t<864e5*3);
 const nice=e=>/failed to fetch|networkerror|load failed|cors/i.test(e.message)?'Your browser could not reach PayGate (offline or blocked). Try again, or see the TUTORIAL for the dedicated-endpoint fix.':e.message;
 
-async function create(ref,amount){
+async function create(ref,amount,mode,email){
   if(!ready())throw new Error('Payments are not switched on yet.');
   const a=Math.round(Number(amount)*100)/100;
   if(!(a>=CFG.minAmount))throw new Error('Minimum is '+usd(CFG.minAmount)+'.');
   if(!/^https?:$/.test(location.protocol))throw new Error('Open the site from its https:// address (GitHub Pages) — PayGate needs a real callback URL.');
   const id=ref+'-'+Date.now().toString(36)+rnd();                       // unique per order → PayGate makes a fresh address each time
   const cb=new URL('donate.html',location.href);cb.search='';cb.hash='';cb.searchParams.set('order',id);
+  if(mode==='card'){
+    const cw=cardWallet();if(!cw)throw new Error('Card payments are not switched on: put a Polygon/EVM wallet in wallets.evm (or cardWallet) in js/paygate.js.');
+    if(!/^\S+@\S+\.\S+$/.test(email||''))throw new Error('Please enter a valid email for the card checkout.');
+    const rc=await fetch(`https://${CFG.apiHost}/control/wallet.php?address=${encodeURIComponent(cw)}&callback=${encodeURIComponent(cb.href)}`);
+    let jc;try{jc=await rc.json()}catch{throw new Error('PayGate answered with something unexpected (HTTP '+rc.status+').')}
+    if(!jc.address_in)throw new Error(jc.error||jc.message||'PayGate refused the card request — check your Polygon USDC wallet address in js/paygate.js.');
+    const urlc=`https://${CFG.checkoutHost}/pay.php?address=${jc.address_in}&amount=${a}&provider=hosted&email=${encodeURIComponent(email)}&currency=${encodeURIComponent(CFG.currency)}`;
+    const oc={id,ref,amount:a,ipn:jc.ipn_token||'',url:urlc,t:Date.now(),paid:false,mode:'card'};upd(oc);return oc;
+  }
+  if(!cryptoReady())throw new Error('Crypto payments are not switched on yet.');
   const r=await fetch(`https://${CFG.apiHost}/crypto/multi-hosted-wallet.php`,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
     body:JSON.stringify({...wallets(),fiat_amount:a,fiat_currency:CFG.currency,callback:cb.href})});
   let j;try{j=await r.json()}catch{throw new Error('PayGate answered with something unexpected (HTTP '+r.status+').')}
@@ -48,6 +63,12 @@ async function create(ref,amount){
 }
 async function check(o){
   if(!o.ipn)return false;
+  if(o.mode==='card'){
+    const j=await fetch(`https://${CFG.apiHost}/control/payment-status.php?ipn_token=${encodeURIComponent(o.ipn)}`).then(r=>r.json()).catch(()=>null);
+    console.debug('[RWPay] card status',j);
+    if(!j||String(j.status||'').toLowerCase()!=='paid')return false;
+    o.paid=true;o.coin='card';o.tx=j.txid_in||'';upd(o);return true;
+  }
   const hit=await Promise.all(CFG.statusCoins.map(c=>fetch(`https://${CFG.apiHost}/crypto/payment-status.php?ipn_token=${o.ipn}&ticker=${encodeURIComponent(c)}`).then(r=>r.json()).then(j=>String(j.status||'').toLowerCase()==='paid'?j:null).catch(()=>null)));
   const j=hit.find(Boolean);if(!j)return false;
   o.paid=true;o.coin=j.coin||'';o.tx=j.txid_in||'';upd(o);return true;
@@ -70,25 +91,30 @@ function open(o){
   const def=o.amount||CFG.presets[Math.min(1,CFG.presets.length-1)];
   const m=modal(`<div class="pm-k">${fixed?'🔒 Premium file':'♥ Donation'}</div><h3>${E(title)}</h3>${o.note?`<p class="by">${E(o.note)}</p>`:''}
     ${fixed?`<div class="pm-amt"><b>${usd(o.price)}</b><span>${E(CFG.currency)}</span></div>`
-    :`<div class="pm-chips">${CFG.presets.map(a=>`<button type="button" class="chip${a===def?' on':''}" data-a="${a}">${usd(a)}</button>`).join('')}</div><label class="pm-c">Or any amount (${E(CFG.currency)})<input type="number" min="${CFG.minAmount}" step="0.01" inputmode="decimal" value="${def}"></label>`}
-    <button type="button" class="btn pri pm-go">Pay with crypto →</button>
-    <p class="pm-s">No account, no KYC. Pick your coin on PayGate's secure page — BTC, ETH, USDT, USDC, SOL, LTC, XMR and more.</p><div class="pm-st" aria-live="polite"></div>`);
-  const inp=m.querySelector('input'),st=m.querySelector('.pm-st'),go=m.querySelector('.pm-go');
+    :`<div class="pm-chips">${CFG.presets.map(a=>`<button type="button" class="chip${a===def?' on':''}" data-a="${a}">${usd(a)}</button>`).join('')}</div><label class="pm-c">Or any amount (${E(CFG.currency)})<input class="pm-ai" type="number" min="${CFG.minAmount}" step="0.01" inputmode="decimal" value="${def}"></label>`}
+    ${cardWallet()?`<label class="pm-c">Email (for your card receipt)<input class="pm-em" type="email" autocomplete="email" placeholder="you@example.com"></label><button type="button" class="btn pri pm-go pm-card">💳 Pay with card / Apple Pay / Google Pay →</button>`:''}
+    ${cryptoReady()?`<button type="button" class="btn${cardWallet()?'':' pri'} pm-go pm-cr" style="${cardWallet()?'margin-top:10px':''}">🪙 Pay with crypto →</button>`:''}
+    <p class="pm-s">No account, no KYC. Pay by card, Apple Pay or Google Pay (other local methods appear on PayGate's page when available), or with crypto: BTC, ETH, USDT, USDC, SOL, LTC, XMR and more.</p><div class="pm-st" aria-live="polite"></div>`);
+  const inp=m.querySelector('.pm-ai'),em=m.querySelector('.pm-em'),st=m.querySelector('.pm-st'),btns=[...m.querySelectorAll('.pm-go')];
   m.querySelectorAll('.pm-chips .chip').forEach(c=>c.onclick=()=>{inp.value=c.dataset.a;m.querySelectorAll('.pm-chips .chip').forEach(x=>x.classList.toggle('on',x===c))});
   inp&&(inp.oninput=()=>m.querySelectorAll('.pm-chips .chip').forEach(x=>x.classList.toggle('on',x.dataset.a===inp.value)));
-  go.onclick=async()=>{
-    const amt=fixed?o.price:parseFloat(inp.value),tab=window.open('','_blank');
-    go.disabled=true;go.textContent='Creating your checkout…';st.className='pm-st';st.textContent='';
+  const start=async(mode,btn)=>{
+    const amt=fixed?o.price:parseFloat(inp.value),label=btn.textContent;
+    if(mode==='card'&&!/^\S+@\S+\.\S+$/.test((em.value||'').trim())){st.className='pm-st bad';st.textContent='Enter your email first (PayGate needs it for the card receipt).';em.focus();return}
+    const tab=window.open('','_blank');
+    btns.forEach(b=>b.disabled=true);btn.textContent='Creating your checkout…';st.className='pm-st';st.textContent='';
     try{
-      const ord=await create(o.ref,amt);
+      const ord=await create(o.ref,amt,mode,em?em.value.trim():'');
       if(tab){tab.opener=null;tab.location.href=ord.url}
       wait(m,ord,o);
-    }catch(e){if(tab)tab.close();go.disabled=false;go.textContent='Pay with crypto →';st.className='pm-st bad';st.textContent=nice(e)}
+    }catch(e){if(tab)tab.close();btns.forEach(b=>b.disabled=false);btn.textContent=label;st.className='pm-st bad';st.textContent=nice(e)}
   };
+  m.querySelectorAll('.pm-card').forEach(b=>b.onclick=()=>start('card',b));
+  m.querySelectorAll('.pm-cr').forEach(b=>b.onclick=()=>start('crypto',b));
 }
 function wait(m,ord,o){
   m.querySelector('.pm-b').innerHTML=`<button class="pm-x" aria-label="Close">×</button><div class="pm-k">${usd(ord.amount)} ${E(CFG.currency)}</div><h3>Complete the payment in the PayGate tab</h3>
-    <div class="pm-spin"></div><p class="by">Choose your coin, send the exact amount, and keep this window open. We'll notice when it lands.</p>
+    <div class="pm-spin"></div><p class="by">Finish the payment in the PayGate tab (card, Apple/Google Pay, or crypto — send the exact amount) and keep this window open. We'll notice when it lands.</p>
     <p><a class="btn sm" href="${E(ord.url)}" target="_blank" rel="noopener">Re-open checkout ↗</a> <button type="button" class="btn sm dark pm-chk">I've paid — check now</button></p><div class="pm-st" aria-live="polite"></div>`;
   const st=m.querySelector('.pm-st');let n=0,busy=false;
   const run=async manual=>{if(busy)return;busy=true;if(manual){st.className='pm-st';st.textContent='Checking…'}
