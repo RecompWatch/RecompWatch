@@ -20,3 +20,5 @@ Push to GitHub → Settings → Pages → Branch `main`, folder `/ (root)`.
 Fan-made tracker. Not affiliated with Rockstar, Take-Two or Microsoft. No game files hosted.
 
 See **TUTORIAL.md** for the full step-by-step guide (GitHub link, donations, crypto addresses, videos, adding projects).
+
+Payments: PayGate.to only (donations + paid files). See TUTORIAL.md section 4.

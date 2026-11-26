@@ -56,3 +56,4 @@ a{color:inherit}img{max-width:100%}h1,h2,h3{margin:0;letter-spacing:-.03em;line-
 .pc-rank{font-size:34px}.pc-id h3{overflow-wrap:anywhere}
 .cry{display:grid;gap:8px;margin-top:10px}.cr{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:10px 12px;border-radius:12px;background:var(--bg2);border:1px solid var(--line)}.cr b{font:800 13px var(--mono);color:var(--hot);min-width:44px}.cr code{flex:1;min-width:180px;font:12.5px var(--mono);overflow-wrap:anywhere;color:var(--ink)}.cdet summary{cursor:pointer;color:var(--a);font-size:13px;font-weight:700;margin-top:6px}
 .mbar{height:6px;border-radius:3px;background:var(--line);overflow:hidden}.mbar i{display:block;height:100%;background:var(--g);border-radius:3px}
+.pf .tools input{flex:none}

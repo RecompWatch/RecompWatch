@@ -26,30 +26,33 @@ Everything on the site lives in **one file: `data/data.js`**. You never edit HTM
 4. In GitHub open the `data` folder → **Add file → Upload files** → drop the downloaded `data.js` (it overwrites) → **Commit**.
 The admin does NOT save by itself — nothing changes on the site until you upload the new data.js.
 
-## 4. Donations
-### 4a. Site donation buttons (Ko-fi, PayPal, GitHub Sponsors, a payment-gateway link…)
-Admin → **Site settings → Site donation links**. One per line:
-`Label | URL | short note`
-Example: `Ko-fi | https://ko-fi.com/yourname | One-off or monthly`
-Any line whose URL still contains `YOUR_` is hidden automatically, so unfinished placeholders never show.
+## 4. Payments — PayGate.to is the ONLY payment method
+Everything else (Ko-fi, PayPal, Sponsors, raw crypto addresses…) has been removed. The admin refuses to save any payment link whose domain is not `paygate.to`, and the site never shows one.
 
-### 4b. Crypto wallet addresses (shown with a Copy button)
-Admin → **Site settings → Site crypto addresses**. One per line:
-`COIN | network | address`
-Examples:
-`BTC | Bitcoin | bc1q…yourbitcoinaddress`
-`USDT | TRC20 (Tron) | T…yourtronaddress`
-`ETH | Ethereum / ERC20 | 0x…youraddress`
-Rules: copy the address from your wallet (never type it); make sure the *network* written matches the address type; send a tiny test first; NEVER paste a seed phrase or private key — only public receive addresses. Lines with `YOUR_` are hidden.
+### 4a. Get a PayGate.to link
+PayGate.to needs no account and no KYC. You give it a wallet you control and it creates checkout links; the money is paid out to your wallet.
+1. Prepare a **self-custodial wallet** (e.g. MetaMask, Trust Wallet, Ledger). Never use an exchange deposit address. For card payments PayGate pays out in **USDC on the Polygon network**, so copy your wallet's Polygon address.
+2. Open the PayGate.to documentation (search "PayGate.to instant payment gateway" → the API docs / Postman collection) and follow the 2 steps there:
+   - Step 1: call `wallet.php` on `api.paygate.to` with **your payout wallet address** and a **callback URL** (any URL you own; use your site link if you have no server). It returns a temporary receiving address.
+   - Step 2: build the hosted checkout link on `checkout.paygate.to` (`pay.php`) with that address, the **amount**, currency and (optional) email. The result is a normal link you can open in a browser.
+   Parameter names are in their docs; their support can also walk you through it.
+3. Test: open the link, pay a tiny amount, confirm it reaches your wallet. Also check with PayGate (or by paying twice) whether one link can be reused by many buyers. If each link is single-use, make a fresh link for each sale.
 
-### 4c. Payment gateway (NOWPayments, Coinbase Commerce, etc.)
-The site is static, so use the gateway's **hosted payment/donation page link** (not an embedded script):
-1. In your gateway dashboard create a "payment link" / "donation button" / "invoice page".
-2. Copy its URL.
-3. Paste it as a line in **Site donation links** (`Crypto checkout | https://… | Pay with any coin`), or in a project's **Donation URL** field (4d).
+### 4b. Website donation button
+Admin → **Site settings → Website donation link** → paste the paygate.to link. A "Donate with PayGate" card then appears on the Donate page.
 
-### 4d. Donations for a specific project
-Admin → click the project → fill **Donation URL** (their Ko-fi/Sponsors/gateway link) and/or **Crypto addresses** (`COIN | network | address`). A **♥ Donate** button and a Crypto section then appear on the project's page and on the Donate page. Only use links/addresses the project's developers gave you, and be transparent if the money goes to you instead of them.
+### 4c. Donation button for one project
+Admin → click the project → **Donation URL** → paste a paygate.to link whose payout wallet is the developer's (or yours, if you collect on their behalf — be transparent about that). A ♥ Donate button shows on the project page and on the Donate page.
+
+### 4d. Paid ("premium") files — how it works
+GitHub Pages is a static host: it cannot check a payment or hide files by itself. So this site uses a code system:
+1. You upload your file somewhere private-ish (Mega, Google Drive, Dropbox… anything with a share link).
+2. Admin → **Premium (paid) files → ＋ Add paid file**. Fill title, description, price label, **PayGate payment link**, the **secret file link** and an **unlock code** you choose.
+3. Click **Download data.js** and upload it (section 3). The file link is saved **encrypted**; nobody can read it without the code.
+4. A buyer opens the Downloads page, clicks **Pay with PayGate**, pays, then sends you proof of payment through your **contact link** (Admin → Site settings → *Contact link*, e.g. `https://t.me/yourname` or `mailto:you@mail.com`).
+5. You verify the payment in your wallet and send them the unlock code. They type it in and the file link appears.
+Limits: it is manual (you reply to each buyer), and anyone you give the code to can pass it on. Fully automatic delivery needs a small server that receives PayGate's callback — not possible on GitHub Pages alone; ask me if you want that built later.
+To change the code or file link later: open the paid file in the admin, fill both "secret file link" and "unlock code" again, download and upload data.js.
 
 ## 5. Add videos to a project
 Admin → click the project → **Videos / proof links**, one per line:
@@ -69,6 +72,7 @@ Admin → **＋ Add project**, then fill:
 - **Detail metrics** (one per line `Name | percent | label`), e.g. `Rendering | 80 | Close to the console` — draws the four small bars.
 - **Updates**: `2026-11-26 | Reached Playable` per line (timeline on the project page).
 - **Extra links**: `Discord | https://discord.gg/…`
+- **Donation URL**: paygate.to link only (see 4c).
 - **Download URL**: leave empty to use the repo's `/releases`.
 - **Avatar**: easiest is `https://github.com/USERNAME.png?size=88`. Or upload an image to `assets/img/avatars/` and write `assets/img/avatars/name.png`.
 - **Stars / Forks / Issues / Activity / Last push** are plain text you type (e.g. `12`, `3h ago`); `Last push` is used by the "Recently active" sort.

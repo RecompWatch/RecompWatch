@@ -1,26 +1,9 @@
-/* RecompWatch data — edit this file (or use admin.html) to add/change projects, progress, links, videos, donations. */
+/* RecompWatch data — edit via admin.html (or by hand). Payments: paygate.to links only. */
 window.RW_DATA = {
  "site": {
   "name": "RecompWatch",
   "release": "2026-11-23T14:36:00Z",
   "sourceUrl": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/",
-  "donate": [
-   {
-    "label": "Ko-fi",
-    "url": "https://ko-fi.com/YOUR_NAME",
-    "note": "One-off or monthly, no account needed"
-   },
-   {
-    "label": "GitHub Sponsors",
-    "url": "https://github.com/sponsors/YOUR_NAME",
-    "note": "Monthly support"
-   },
-   {
-    "label": "PayPal",
-    "url": "https://paypal.me/YOUR_NAME",
-    "note": "Direct one-off tip"
-   }
-  ],
   "issues": "https://github.com/YOUR_NAME/YOUR_REPO/issues",
   "history": [
    {
@@ -48,23 +31,8 @@ window.RW_DATA = {
     "score": 91.5
    }
   ],
-  "crypto": [
-   {
-    "coin": "BTC",
-    "network": "Bitcoin",
-    "address": "YOUR_BTC_ADDRESS"
-   },
-   {
-    "coin": "USDT",
-    "network": "TRC20 (Tron)",
-    "address": "YOUR_USDT_TRC20_ADDRESS"
-   },
-   {
-    "coin": "ETH",
-    "network": "Ethereum / ERC20",
-    "address": "YOUR_ETH_ADDRESS"
-   }
-  ]
+  "donateUrl": "",
+  "contact": ""
  },
  "milestones": [
   {
@@ -202,7 +170,6 @@ window.RW_DATA = {
    "archivedNote": "",
    "download": "",
    "donate": "",
-   "crypto": [],
    "videos": [
     {
      "url": "https://v.redd.it/137k5pow5w3i1",
@@ -275,7 +242,6 @@ window.RW_DATA = {
    "archivedNote": "",
    "download": "",
    "donate": "",
-   "crypto": [],
    "videos": [
     {
      "url": "https://www.reddit.com/r/FitGirlRepack/comments/1y5k8xu/actually_playable/",
@@ -343,7 +309,6 @@ window.RW_DATA = {
    "archivedNote": "",
    "download": "",
    "donate": "",
-   "crypto": [],
    "videos": [
     {
      "url": "https://www.reddit.com/r/FitGirlRepack/comments/1y55bgm/first_pc_trickshot_by_belo/",
@@ -412,7 +377,6 @@ window.RW_DATA = {
    "archivedNote": "",
    "download": "",
    "donate": "",
-   "crypto": [],
    "videos": [],
    "updates": [],
    "links": []
@@ -466,7 +430,6 @@ window.RW_DATA = {
    "archivedNote": "",
    "download": "",
    "donate": "",
-   "crypto": [],
    "videos": [
     {
      "url": "https://github.com/fablinoo/kelvaroq#external-playtest-one-36-minute-session",
@@ -533,7 +496,6 @@ window.RW_DATA = {
    "archivedNote": "",
    "download": "",
    "donate": "",
-   "crypto": [],
    "videos": [],
    "updates": [],
    "links": []
@@ -595,7 +557,6 @@ window.RW_DATA = {
    "archivedNote": "",
    "download": "",
    "donate": "",
-   "crypto": [],
    "videos": [],
    "updates": [],
    "links": []
@@ -657,7 +618,6 @@ window.RW_DATA = {
    "archivedNote": "",
    "download": "",
    "donate": "",
-   "crypto": [],
    "videos": [],
    "updates": [],
    "links": []
@@ -721,7 +681,6 @@ window.RW_DATA = {
    "archivedNote": "",
    "download": "",
    "donate": "",
-   "crypto": [],
    "videos": [],
    "updates": [],
    "links": []
@@ -774,7 +733,6 @@ window.RW_DATA = {
    "archivedNote": "",
    "download": "",
    "donate": "",
-   "crypto": [],
    "videos": [
     {
      "url": "https://rumble.com/v7iv98i-gta6-modding-stream.html",
@@ -833,7 +791,6 @@ window.RW_DATA = {
    "archivedNote": "",
    "download": "",
    "donate": "",
-   "crypto": [],
    "videos": [
     {
      "url": "https://rumble.com/v7iwggw-gta-6-mooding-pc.html",
@@ -892,7 +849,6 @@ window.RW_DATA = {
    "archivedNote": "",
    "download": "",
    "donate": "",
-   "crypto": [],
    "videos": [
     {
      "url": "https://x.com/Stu9ao",
@@ -950,7 +906,6 @@ window.RW_DATA = {
    "archivedNote": "",
    "download": "",
    "donate": "",
-   "crypto": [],
    "videos": [],
    "updates": [],
    "links": []
@@ -988,8 +943,7 @@ window.RW_DATA = {
     }
    ],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   },
   {
    "id": "xbox2windows",
@@ -1020,8 +974,7 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   },
   {
    "id": "tuxbox",
@@ -1053,8 +1006,7 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   },
   {
    "id": "palmetto",
@@ -1084,8 +1036,7 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   },
   {
    "id": "gta6-boottest",
@@ -1115,8 +1066,7 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   },
   {
    "id": "percyscarlett",
@@ -1145,8 +1095,7 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   },
   {
    "id": "gta6-compat-layer",
@@ -1176,8 +1125,7 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   },
   {
    "id": "xbox-emulator",
@@ -1209,8 +1157,7 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   },
   {
    "id": "scarlettx",
@@ -1242,8 +1189,7 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   },
   {
    "id": "openscarlett-ce",
@@ -1275,8 +1221,7 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   },
   {
    "id": "openscarlett",
@@ -1308,8 +1253,7 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   },
   {
    "id": "scarlett-layer",
@@ -1341,8 +1285,7 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   },
   {
    "id": "xvalkyrie",
@@ -1374,8 +1317,7 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   },
   {
    "id": "anyxboxx",
@@ -1407,8 +1349,7 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   },
   {
    "id": "gtavi-recomp",
@@ -1438,8 +1379,7 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   },
   {
    "id": "xlaunchvi",
@@ -1468,8 +1408,7 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   },
   {
    "id": "dedsec",
@@ -1499,8 +1438,7 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   },
   {
    "id": "xbgtasix",
@@ -1529,8 +1467,7 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   },
   {
    "id": "scarab",
@@ -1559,8 +1496,7 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   },
   {
    "id": "anyxboxseries",
@@ -1590,8 +1526,7 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   },
   {
    "id": "g6recomp",
@@ -1621,8 +1556,7 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   },
   {
    "id": "anybox",
@@ -1651,8 +1585,7 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   },
   {
    "id": "grandtheftxbox",
@@ -1681,8 +1614,7 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   },
   {
    "id": "seriesx-emulator",
@@ -1711,8 +1643,7 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   },
   {
    "id": "scarlett-windows-compat",
@@ -1741,8 +1672,7 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   },
   {
    "id": "leonida",
@@ -1774,8 +1704,7 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   },
   {
    "id": "americas-recomp",
@@ -1812,8 +1741,7 @@ window.RW_DATA = {
     }
    ],
    "links": [],
-   "metrics": [],
-   "crypto": []
+   "metrics": []
   }
  ],
  "tracks": [
@@ -1838,5 +1766,6 @@ window.RW_DATA = {
    "desc": "From crashing constantly to stable over long sessions."
   }
  ],
- "scoringIntro": "One scale for every project, in two parts. Getting in is a ladder to 50%: groundwork fills the first 10%, then each step needs the one before it, up to Playable. Playing well fills the rest: how far you can play, how right it looks, how fast it runs and how long it keeps running. 100% is the whole game, finished."
+ "scoringIntro": "One scale for every project, in two parts. Getting in is a ladder to 50%: groundwork fills the first 10%, then each step needs the one before it, up to Playable. Playing well fills the rest: how far you can play, how right it looks, how fast it runs and how long it keeps running. 100% is the whole game, finished.",
+ "paid": []
 };
