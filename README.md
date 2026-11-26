@@ -7,7 +7,7 @@ Live community tracker for PC port efforts. Static site — works on GitHub Page
 
 ## Managing content
 Everything lives in **`data/data.js`**. Two ways to edit:
-1. Open `admin.html` (in the live site or locally) → add/edit projects (progress, links, videos, updates, donation/download URLs) → **Download data.js** → replace `data/data.js` → commit & push.
+1. Open the secret admin file (in the live site or locally) → add/edit projects (progress, links, videos, updates, donation/download URLs) → **Download data.js** → replace `data/data.js` → commit & push.
 2. Edit `data/data.js` by hand.
 
 Set your own donation links in **Site settings** in the admin (they are `YOUR_NAME` placeholders now), and the timer start date.

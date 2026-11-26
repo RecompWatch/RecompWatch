@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
+<title>Admin — RecompWatch</title><link rel="icon" href="assets/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/styles.css"></head><body data-page="admin">
+<script src="data/data.js"></script>
+<header class="nav"><div class="wrap"><a class="brand" href="index.html">← Back to site</a><nav class="links"><button class="btn sm" id="add">＋ Add project</button><button class="btn sm pri" id="dl">⬇ Download data.js</button></nav></div></header>
+<main class="wrap sec"><div class="note">Edit anything below, then click <b>Download data.js</b> and replace <code>data/data.js</code> in your repo (commit &amp; push). Nothing is saved until you do. Payments: <b>paygate.to links only</b>.</div>
+<div class="adm"><div class="box list"><h3>Projects</h3><div id="pl"></div></div><div><div id="fm"></div>
+<div class="box"><h3>Premium (paid) files</h3><p class="by">Buyers pay via PayGate, you send them the unlock code, they enter it on the Downloads page. The file link is stored encrypted — only the code reveals it.</p><div id="paid"></div><p><button class="btn sm" id="addpaid">＋ Add paid file</button></p></div>
+<div class="box"><h3>Site settings</h3><div class="f">
+<label>Website donation link (paygate.to link)<input id="don" placeholder="https://checkout.paygate.to/pay.php?…"></label>
+<label>Contact link where buyers send payment proof (https://t.me/you or mailto:you@mail.com)<input id="ctc"></label>
+<label>Issues / contact page link (footer)<input id="iss" placeholder="https://github.com/YOU/REPO/issues"></label>
+<label>Timer start (leak / release date &amp; time)<input type="datetime-local" id="sd"></label>
+<label>Leader score history for the home chart (one per line: YYYY-MM-DD | score)<textarea id="hist"></textarea></label></div></div></div></div></main>
+<script src="js/p-5f0a9cd14bfb11.js"></script></body></html>

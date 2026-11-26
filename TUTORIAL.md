@@ -10,17 +10,17 @@
 7. Wait 1–2 minutes, refresh the Pages screen. Your link appears at the top:
    `https://YOUR-USERNAME.github.io/recompwatch/`
    (Tip: name the repo `YOUR-USERNAME.github.io` to get the shorter link `https://YOUR-USERNAME.github.io/`.)
-8. Admin page: `…/admin.html`.
+8. Admin page: your hidden admin page (the secret-named `rw-…-panel.html` file; the name was given to you privately — never share or publish it).
 
 ## 2. Apply an update (overwrite files with a commit)
 1. Unzip `dark-theme-update.zip`.
 2. In your repo delete `toolkit.html` (open it → trash-can icon → Commit). It's no longer used.
-3. **Add file → Upload files**, drag the unzipped `css`, `js`, `data`, `assets` folders and the loose files (`admin.html`, `README.md`, `TUTORIAL.md`) into the page. Same names overwrite the old ones.
+3. **Add file → Upload files**, drag the unzipped `css`, `js`, `data`, `assets` folders and the loose files (the secret admin file, `README.md`, `TUTORIAL.md`) into the page. Same names overwrite the old ones.
 4. **Commit changes**. After ~1 minute press Ctrl+F5 on the site.
 
 ## 3. How editing works (the important idea)
 Everything on the site lives in **one file: `data/data.js`**. You never edit HTML.
-1. Open `YOUR-LINK/admin.html`.
+1. Open `YOUR-LINK/<your-secret-admin-file>.html` (or just double-click the file on your computer).
 2. Change things (projects, donations, timer…).
 3. Click **⬇ Download data.js**.
 4. In GitHub open the `data` folder → **Add file → Upload files** → drop the downloaded `data.js` (it overwrites) → **Commit**.

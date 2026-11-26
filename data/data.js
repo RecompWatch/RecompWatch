@@ -1,4 +1,4 @@
-/* RecompWatch data — edit via admin.html (or by hand). Payments: paygate.to links only. */
+/* RecompWatch data — edit via the admin page (or by hand). Payments: paygate.to links only. */
 window.RW_DATA = {
  "site": {
   "name": "RecompWatch",
