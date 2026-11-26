@@ -3,7 +3,7 @@
 Live community tracker for PC port efforts. Static site — works on GitHub Pages as-is.
 
 ## Pages
-`index` (home + live timer) · `projects` · `project?id=…` (per-project page with progress, videos, updates) · `watchlist` · `toolkit` · `scoring` · `downloads` · `donate` · `admin`
+`index` (home + live timer) · `projects` · `project?id=…` (per-project page with progress, videos, updates) · `watchlist` · `scoring` · `downloads` · `donate` · `admin`
 
 ## Managing content
 Everything lives in **`data/data.js`**. Two ways to edit:
@@ -18,3 +18,5 @@ Videos: paste YouTube links (or direct .mp4) one per line. Updates: `YYYY-MM-DD 
 Push to GitHub → Settings → Pages → Branch `main`, folder `/ (root)`.
 
 Fan-made tracker. Not affiliated with Rockstar, Take-Two or Microsoft. No game files hosted.
+
+See **TUTORIAL.md** for the full step-by-step guide (GitHub link, donations, crypto addresses, videos, adding projects).
