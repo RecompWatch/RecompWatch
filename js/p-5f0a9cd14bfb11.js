@@ -11,7 +11,15 @@ function parse(t,v){if(t==='x')return enc(v.trim());if(t==='n')return parseFloat
  if(t==='u')return split(v).map(s=>{const[a,b]=sp(s);return{date:a,text:b}});if(t==='k')return split(v).map(s=>{const[a,b]=sp(s);return{label:a,url:b}});
  if(t==='m')return split(v).map(s=>{const[a,b,c]=s.split('|').map(x=>x.trim());return{name:a,pct:parseFloat(b)||0,label:c||''}});
  if(t==='v')return split(v).map(s=>{const[a,b]=sp(s);return /^https?:/i.test(a)||!b?{url:s.trim(),label:''}:{label:a,url:b}});return v}
-function list(){$('#pl').innerHTML=D.projects.map((p,i)=>`<div class="pi ${i===cur?'on':''}" data-i="${i}"><span>${esc(p.name)}</span><span>${p.score}%</span></div>`).join('');document.querySelectorAll('.pi').forEach(e=>e.onclick=()=>{cur=+e.dataset.i;list();form()})}
+/* Bulk price: same rule the site uses (no download URL and no github.com/owner/repo URL = paid-file project) */
+const isPaidProj=p=>!(p.download||/github\.com\/[^/]+\/[^/]+/.test(p.url||''));
+function bulk(){const n=D.projects.filter(isPaidProj).length,c=$('#bcount');if(c)c.textContent=n+' project'+(n===1?'':'s')+' without a GitHub link'}
+function bulkApply(){const v=$('#bprice').value.trim(),n=parseFloat(v.replace(/[^\d.]/g,''));
+ if(!(n>0))return alert('Enter a price above 0 (number, e.g. 9).');
+ const t=D.projects.filter(isPaidProj);if(!t.length)return alert('No projects without a GitHub link.');
+ if(!confirm('Set the price of '+t.length+' project(s) without a GitHub link to $'+n+'?'))return;
+ t.forEach(p=>p.paidPrice=String(n));form();bulk();$('#bmsg').textContent='✓ '+t.length+' price(s) set to $'+n+'. Now click Download data.js.'}
+function list(){bulk();$('#pl').innerHTML=D.projects.map((p,i)=>`<div class="pi ${i===cur?'on':''}" data-i="${i}"><span>${esc(p.name)}</span><span>${p.score}%</span></div>`).join('');document.querySelectorAll('.pi').forEach(e=>e.onclick=()=>{cur=+e.dataset.i;list();form()})}
 function form(){const p=D.projects[cur];if(!p){$('#fm').innerHTML='<div class="empty">Pick a project or add a new one.</div>';return}
  $('#fm').innerHTML=`<div class="box"><h3>Edit: ${esc(p.name)}</h3><div class="f">${F.map(([k,l,t])=>t==='b'?`<label><span><input type="checkbox" data-k="${k}" ${p[k]?'checked':''}> ${l}</span></label>`:t==='s'?`<label>${l}<select data-k="${k}">${[['race','Race (ranked)'],['private','Private build (not ranked)'],['watch','Watchlist']].map(o=>`<option value="${o[0]}" ${p[k]===o[0]?'selected':''}>${o[1]}</option>`).join('')}</select></label>`:`<label>${l}${['a','l','u','k','m','v'].includes(t)?`<textarea data-k="${k}" data-t="${t}">${esc(val(p,k,t))}</textarea>`:`<input data-k="${k}" data-t="${t}" value="${esc(val(p,k,t))}" ${t==='n'?'type="number" step="0.1" min="0" max="100"':''}>`}</label>`).join('')}</div><p style="margin-top:14px"><button class="btn" id="del">🗑 Delete project</button></p></div>`;
  document.querySelectorAll('#fm [data-k]').forEach(e=>e.oninput=e.onchange=()=>{p[e.dataset.k]=e.type==='checkbox'?e.checked:parse(e.dataset.t,e.value);list()});
@@ -27,4 +35,4 @@ $('#dl').onclick=()=>{D.site.release=new Date($('#sd').value).toISOString();D.si
  if(bad.length)return alert('Every premium file needs a price and a file link. Fix:\n\n'+bad.join('\n'));
  const js='/* RecompWatch data — edit via the admin page (or by hand). Payments: PayGate.to, wallets live in js/paygate.js */\nwindow.RW_DATA = '+JSON.stringify(D,null,1)+';\n';
  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([js],{type:'text/javascript'}));a.download='data.js';a.click()};
-list();form();paidUI();
+$('#bgo').onclick=bulkApply;list();form();paidUI();
