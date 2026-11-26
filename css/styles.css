@@ -57,3 +57,24 @@ a{color:inherit}img{max-width:100%}h1,h2,h3{margin:0;letter-spacing:-.03em;line-
 .cry{display:grid;gap:8px;margin-top:10px}.cr{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:10px 12px;border-radius:12px;background:var(--bg2);border:1px solid var(--line)}.cr b{font:800 13px var(--mono);color:var(--hot);min-width:44px}.cr code{flex:1;min-width:180px;font:12.5px var(--mono);overflow-wrap:anywhere;color:var(--ink)}.cdet summary{cursor:pointer;color:var(--a);font-size:13px;font-weight:700;margin-top:6px}
 .mbar{height:6px;border-radius:3px;background:var(--line);overflow:hidden}.mbar i{display:block;height:100%;background:var(--g);border-radius:3px}
 .pf .tools input{flex:none}
+
+/* ---- PayGate checkout modal, premium panel, donate box ---- */
+.pm{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:18px;background:rgba(5,8,12,.66);backdrop-filter:blur(6px);animation:pmf .18s}
+.pm-b{position:relative;width:min(440px,100%);padding:30px 28px 26px;border-radius:20px;background:var(--card);border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.45);text-align:center;animation:pmu .22s}
+.pm-b h3{font-size:22px;font-weight:900;margin:6px 0 10px}.pm-k{font:700 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--a)}
+.pm-x{position:absolute;top:10px;right:12px;width:34px;height:34px;border:0;border-radius:50%;background:var(--bg2);color:var(--mut);font-size:22px;line-height:1;cursor:pointer}.pm-x:hover{color:var(--ink)}
+.pm-amt{margin:18px 0}.pm-amt b{font:900 46px/1 var(--mono)}.pm-amt span{margin-left:8px;color:var(--mut);font-weight:700}
+.pm-chips,.amts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:16px 0}
+.pm-c{display:grid;gap:6px;text-align:left;font-size:13px;color:var(--mut);margin-bottom:16px}.pm-c input{padding:13px 16px;border-radius:12px;border:1px solid var(--line);background:var(--bg2);color:var(--ink);font:700 18px var(--mono)}
+.pm-go{width:100%;justify-content:center;padding:15px 20px;font-size:16px}.pm-go:disabled{opacity:.6;cursor:progress}
+.pm-s{font-size:12.5px;color:var(--mut);margin:14px 0 0}.pm-st{min-height:18px;margin-top:10px;font-size:13px;color:var(--mut)}.pm-st.bad{color:var(--bad)}
+.pm-spin{width:42px;height:42px;margin:18px auto;border-radius:50%;border:4px solid var(--line);border-top-color:var(--a);animation:pms 1s linear infinite}
+.pm-ok{width:76px;height:76px;margin:6px auto 12px;border-radius:50%;display:grid;place-items:center;background:var(--a);color:#04140d;font-size:42px;font-weight:900;animation:pmp .5s}
+.pm-t{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);z-index:110;padding:12px 20px;border-radius:99px;background:var(--ink);color:var(--bg);font-weight:700;font-size:14px;transition:.4s}.pm-t.out{opacity:0;transform:translate(-50%,10px)}
+.pm-fx{position:fixed;inset:0;z-index:120;pointer-events:none;overflow:hidden}.pm-fx i{position:absolute;top:-12px;left:var(--x);width:9px;height:14px;border-radius:2px;background:var(--c);animation:pmc 2.2s var(--d) cubic-bezier(.2,.7,.4,1) forwards}
+@keyframes pmf{from{opacity:0}}@keyframes pmu{from{opacity:0;transform:translateY(14px) scale(.98)}}@keyframes pms{to{transform:rotate(1turn)}}@keyframes pmp{0%{transform:scale(.2)}70%{transform:scale(1.15)}}@keyframes pmc{to{transform:translateY(105vh) rotate(var(--r));opacity:.9}}
+.dl-top{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:20px}.dl-top .note{flex:1;min-width:240px;margin:0}
+.prem-btn{background:linear-gradient(90deg,var(--hot),#f59e0b);border-color:transparent;color:#1a1004;font-size:15px}.prem-btn b{display:inline-grid;place-items:center;min-width:24px;height:24px;border-radius:99px;background:rgba(0,0,0,.18);font:800 12px var(--mono)}
+.prem{margin-bottom:26px;padding:18px 18px 2px;border-radius:var(--r);border:1px dashed color-mix(in srgb,var(--hot) 55%,transparent);background:color-mix(in srgb,var(--hot) 6%,transparent)}.prem[hidden]{display:none}.prem .box{margin-bottom:16px}
+.pf-a{display:flex;gap:8px;flex-wrap:wrap}.row .btn.sm+.btn.sm{margin-left:0}
+.give{display:flex;gap:22px;align-items:center;flex-wrap:wrap;justify-content:space-between;background:linear-gradient(120deg,color-mix(in srgb,var(--hot) 9%,var(--card)),var(--card) 60%)}.give .emo{font-size:46px;color:var(--hot);line-height:1}.give-t{flex:1;min-width:220px}.give-t h3{margin:0 0 4px}.give .amts{margin:0}

@@ -1,4 +1,4 @@
-/* RecompWatch data — edit via the admin page (or by hand). Payments: paygate.to links only. */
+/* RecompWatch data — edit via the admin page (or by hand). Payments: PayGate.to, wallets live in js/paygate.js */
 window.RW_DATA = {
  "site": {
   "name": "RecompWatch",
@@ -30,9 +30,7 @@ window.RW_DATA = {
     "date": "2026-11-26",
     "score": 91.5
    }
-  ],
-  "donateUrl": "",
-  "contact": ""
+  ]
  },
  "milestones": [
   {
@@ -169,7 +167,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [
     {
      "url": "https://v.redd.it/137k5pow5w3i1",
@@ -241,7 +238,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [
     {
      "url": "https://www.reddit.com/r/FitGirlRepack/comments/1y5k8xu/actually_playable/",
@@ -308,7 +304,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [
     {
      "url": "https://www.reddit.com/r/FitGirlRepack/comments/1y55bgm/first_pc_trickshot_by_belo/",
@@ -376,7 +371,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": []
@@ -429,7 +423,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [
     {
      "url": "https://github.com/fablinoo/kelvaroq#external-playtest-one-36-minute-session",
@@ -495,7 +488,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": []
@@ -556,7 +548,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": []
@@ -617,7 +608,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": []
@@ -680,7 +670,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": []
@@ -732,7 +721,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [
     {
      "url": "https://rumble.com/v7iv98i-gta6-modding-stream.html",
@@ -740,7 +728,9 @@ window.RW_DATA = {
     }
    ],
    "updates": [],
-   "links": []
+   "links": [],
+   "paidPrice": "",
+   "paidLink": ""
   },
   {
    "id": "darkworldhm",
@@ -790,7 +780,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [
     {
      "url": "https://rumble.com/v7iwggw-gta-6-mooding-pc.html",
@@ -798,7 +787,9 @@ window.RW_DATA = {
     }
    ],
    "updates": [],
-   "links": []
+   "links": [],
+   "paidPrice": "",
+   "paidLink": ""
   },
   {
    "id": "doomsday",
@@ -848,7 +839,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [
     {
      "url": "https://x.com/Stu9ao",
@@ -856,7 +846,9 @@ window.RW_DATA = {
     }
    ],
    "updates": [],
-   "links": []
+   "links": [],
+   "paidPrice": "",
+   "paidLink": ""
   },
   {
    "id": "suri",
@@ -905,10 +897,11 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
-   "links": []
+   "links": [],
+   "paidPrice": "",
+   "paidLink": ""
   },
   {
    "id": "five-star-recomp",
@@ -934,7 +927,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [
     {
@@ -970,7 +962,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": [],
@@ -1002,7 +993,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": [],
@@ -1032,7 +1022,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": [],
@@ -1062,7 +1051,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": [],
@@ -1091,7 +1079,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": [],
@@ -1121,7 +1108,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": [],
@@ -1153,7 +1139,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": [],
@@ -1185,7 +1170,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": [],
@@ -1217,7 +1201,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": [],
@@ -1249,7 +1232,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": [],
@@ -1281,7 +1263,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": [],
@@ -1313,7 +1294,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": [],
@@ -1345,7 +1325,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": [],
@@ -1375,7 +1354,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": [],
@@ -1404,7 +1382,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": [],
@@ -1434,7 +1411,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": [],
@@ -1463,7 +1439,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": [],
@@ -1492,7 +1467,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": [],
@@ -1522,7 +1496,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": [],
@@ -1552,7 +1525,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": [],
@@ -1581,7 +1553,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": [],
@@ -1610,7 +1581,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": [],
@@ -1639,7 +1609,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": [],
@@ -1668,7 +1637,6 @@ window.RW_DATA = {
    "archived": false,
    "archivedNote": "",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": [],
@@ -1700,7 +1668,6 @@ window.RW_DATA = {
    "archived": true,
    "archivedNote": "Archived on 2026-11-23; retained in the project history and no longer ranked.",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [],
    "links": [],
@@ -1732,7 +1699,6 @@ window.RW_DATA = {
    "archived": true,
    "archivedNote": "Archived on 2026-11-23; retained in the project history and no longer ranked.",
    "download": "",
-   "donate": "",
    "videos": [],
    "updates": [
     {

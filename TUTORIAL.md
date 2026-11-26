@@ -26,33 +26,29 @@ Everything on the site lives in **one file: `data/data.js`**. You never edit HTM
 4. In GitHub open the `data` folder → **Add file → Upload files** → drop the downloaded `data.js` (it overwrites) → **Commit**.
 The admin does NOT save by itself — nothing changes on the site until you upload the new data.js.
 
-## 4. Payments — PayGate.to is the ONLY payment method
-Everything else (Ko-fi, PayPal, Sponsors, raw crypto addresses…) has been removed. The admin refuses to save any payment link whose domain is not `paygate.to`, and the site never shows one.
+## 4. Payments — PayGate.to, no login, no links to paste
+Every payment on the site (website donation, project donations, paid files) goes through PayGate.to's hosted multi-coin checkout and lands in **the same wallets**. There is no account, no API key and nothing to generate by hand: the site talks to PayGate.to itself, exactly like their official SDK does, and creates a fresh checkout for every click.
 
-### 4a. Get a PayGate.to link
-PayGate.to needs no account and no KYC. You give it a wallet you control and it creates checkout links; the money is paid out to your wallet.
-1. Prepare a **self-custodial wallet** (e.g. MetaMask, Trust Wallet, Ledger). Never use an exchange deposit address. For card payments PayGate pays out in **USDC on the Polygon network**, so copy your wallet's Polygon address.
-2. Open the PayGate.to documentation (search "PayGate.to instant payment gateway" → the API docs / Postman collection) and follow the 2 steps there:
-   - Step 1: call `wallet.php` on `api.paygate.to` with **your payout wallet address** and a **callback URL** (any URL you own; use your site link if you have no server). It returns a temporary receiving address.
-   - Step 2: build the hosted checkout link on `checkout.paygate.to` (`pay.php`) with that address, the **amount**, currency and (optional) email. The result is a normal link you can open in a browser.
-   Parameter names are in their docs; their support can also walk you through it.
-3. Test: open the link, pay a tiny amount, confirm it reaches your wallet. Also check with PayGate (or by paying twice) whether one link can be reused by many buyers. If each link is single-use, make a fresh link for each sale.
+### 4a. Switch it on (one time)
+1. Open **`js/paygate.js`**.
+2. In the `wallets` block paste the address of your own self-custodial wallet for each network you want to accept (`evm` covers ETH / USDT / USDC on Ethereum, BNB Chain, Polygon, Arbitrum, Base… with a single address). Leave a network as `''` to switch it off. Never use an exchange deposit address.
+3. Commit & push. That's it — the ♥ Donate and 🔒 Pay buttons start working. Until a wallet is pasted they show a friendly "not switched on yet" message.
+Optional in the same file: `presets` (donation amount chips), `currency`, `minAmount`, `addFees` (buyer pays the network fee) and `theme` (checkout colour).
 
-### 4b. Website donation button
-Admin → **Site settings → Website donation link** → paste the paygate.to link. A "Donate with PayGate" card then appears on the Donate page.
+### 4b. Donations
+Every ♥ Donate button (Donate page, project pages) opens the amount picker, then PayGate's checkout. All of them pay the same wallets. Nothing to configure per project.
 
-### 4c. Donation button for one project
-Admin → click the project → **Donation URL** → paste a paygate.to link whose payout wallet is the developer's (or yours, if you collect on their behalf — be transparent about that). A ♥ Donate button shows on the project page and on the Donate page.
+### 4c. Downloads page
+- Every project links to **its own GitHub** (`/releases`, or the **Free download URL** if you set one).
+- A project with **no GitHub URL** becomes a **paid file** automatically. Open it in the admin and fill **Paid file: price in USD** and **Paid file: private file link** (Mega / Drive / …). Until both are filled the row says "Not available yet".
+- The **★ Premium files** button at the top of the Downloads page (only there) opens extra paid files that don't belong to a project. Admin → **Premium (paid) files → ＋ Add paid file** → title, description, price, private link.
+- After paying, the buyer's browser checks PayGate for the payment and the file unlocks on their screen (they can also press **I already paid**).
 
-### 4d. Paid ("premium") files — how it works
-GitHub Pages is a static host: it cannot check a payment or hide files by itself. So this site uses a code system:
-1. You upload your file somewhere private-ish (Mega, Google Drive, Dropbox… anything with a share link).
-2. Admin → **Premium (paid) files → ＋ Add paid file**. Fill title, description, price label, **PayGate payment link**, the **secret file link** and an **unlock code** you choose.
-3. Click **Download data.js** and upload it (section 3). The file link is saved **encrypted**; nobody can read it without the code.
-4. A buyer opens the Downloads page, clicks **Pay with PayGate**, pays, then sends you proof of payment through your **contact link** (Admin → Site settings → *Contact link*, e.g. `https://t.me/yourname` or `mailto:you@mail.com`).
-5. You verify the payment in your wallet and send them the unlock code. They type it in and the file link appears.
-Limits: it is manual (you reply to each buyer), and anyone you give the code to can pass it on. Fully automatic delivery needs a small server that receives PayGate's callback — not possible on GitHub Pages alone; ask me if you want that built later.
-To change the code or file link later: open the paid file in the admin, fill both "secret file link" and "unlock code" again, download and upload data.js.
+### 4d. Be aware (static-site limits)
+- GitHub Pages has no server, so nobody can *truly* hide a file link: private links are stored lightly encoded in `data.js`, shown to the buyer only after PayGate reports the payment as paid. A determined visitor can read `data.js`. For files that must be strictly protected, use a file host with expiring links, or ask for a small server.
+- The unlock is remembered per browser/device.
+- If PayGate ever blocks requests from the browser, get your free dedicated endpoint (paygate.to → white-label API guide) and put it in `apiHost` inside `js/paygate.js`.
+- Test once with a tiny amount before announcing: donate $1 to yourself and check the wallet. Payments below each coin's minimum get stuck at PayGate, so don't set prices lower than the minimums.
 
 ## 5. Add videos to a project
 Admin → click the project → **Videos / proof links**, one per line:
@@ -72,8 +68,7 @@ Admin → **＋ Add project**, then fill:
 - **Detail metrics** (one per line `Name | percent | label`), e.g. `Rendering | 80 | Close to the console` — draws the four small bars.
 - **Updates**: `2026-11-26 | Reached Playable` per line (timeline on the project page).
 - **Extra links**: `Discord | https://discord.gg/…`
-- **Donation URL**: paygate.to link only (see 4c).
-- **Download URL**: leave empty to use the repo's `/releases`.
+- **Free download URL**: leave empty to use the repo's `/releases`. **Paid file** fields: only for projects with no GitHub URL (see 4c).
 - **Avatar**: easiest is `https://github.com/USERNAME.png?size=88`. Or upload an image to `assets/img/avatars/` and write `assets/img/avatars/name.png`.
 - **Stars / Forks / Issues / Activity / Last push** are plain text you type (e.g. `12`, `3h ago`); `Last push` is used by the "Recently active" sort.
 Then Download data.js and upload it (section 3). To remove a project use **Delete project**. To retire one keep it and tick **Archived**.
@@ -81,7 +76,7 @@ Then Download data.js and upload it (section 3). To remove a project use **Delet
 ## 7. Other settings (Admin → Site settings)
 - **Timer start**: date/time the clock counts from.
 - **Leader score history**: lines `YYYY-MM-DD | score` for the home-page chart (add one line per day).
-- **Issues / contact link**: your GitHub issues URL (footer + scoring page). Hidden while it contains `YOUR_`.
+- **Issues link**: your GitHub issues URL (footer + scoring page). Hidden while it contains `YOUR_`.
 
 ## 8. Troubleshooting
 - Change not visible: wait 1–2 min, then Ctrl+F5.

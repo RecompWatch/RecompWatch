@@ -10,7 +10,7 @@ Everything lives in **`data/data.js`**. Two ways to edit:
 1. Open the secret admin file (in the live site or locally) → add/edit projects (progress, links, videos, updates, donation/download URLs) → **Download data.js** → replace `data/data.js` → commit & push.
 2. Edit `data/data.js` by hand.
 
-Set your own donation links in **Site settings** in the admin (they are `YOUR_NAME` placeholders now), and the timer start date.
+Paste your wallet(s) into **`js/paygate.js`** to switch on payments, and set the timer start date in **Site settings**.
 
 Videos: paste YouTube links (or direct .mp4) one per line. Updates: `YYYY-MM-DD | text`.
 
@@ -21,4 +21,4 @@ Fan-made tracker. Not affiliated with Rockstar, Take-Two or Microsoft. No game f
 
 See **TUTORIAL.md** for the full step-by-step guide (GitHub link, donations, crypto addresses, videos, adding projects).
 
-Payments: PayGate.to only (donations + paid files). See TUTORIAL.md section 4.
+Payments: PayGate.to hosted checkout, no login, one wallet for everything (donations + paid files). See TUTORIAL.md section 4.
