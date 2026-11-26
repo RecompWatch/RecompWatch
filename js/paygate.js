@@ -13,7 +13,7 @@ const CFG=window.RW_PAY={
     ltc:'', doge:'', bitcoincash:'', ton:'', xmr:'494JGFr6rkpddPY1tFQAQk8VZ7zMynnqNa5AhNKzaD7i9jWQLTzzAL6Yp8UvBZo3SFNCmE5xL5LfT9CH3PtFcqKK8eUXUe4', zec:'', xrp:''
   },
   /* ▲▲▲ nothing else needs touching ▲▲▲ */
-  apiHost:'api.paygate.to',            // swap for your free dedicated endpoint (api-yourshop-….paygate.to) if you ever get blocked
+  apiHost:'https://dry-morning-3c35.cantoosimen5.workers.dev',            // swap for your free dedicated endpoint (api-yourshop-….paygate.to) if you ever get blocked
   checkoutHost:'checkout.paygate.to',
   currency:'USD', presets:[3,5,10,25], minAmount:1, addFees:true,   // addFees: buyer pays the network fee
   theme:'#2ee6a6',
