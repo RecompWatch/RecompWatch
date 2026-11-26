@@ -2,7 +2,7 @@
 window.RW_DATA = {
  "site": {
   "name": "RecompWatch",
-  "release": "2026-11-23T14:36:00Z",
+  "release": "2026-11-23T13:36:00.000Z",
   "sourceUrl": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/",
   "issues": "https://github.com/YOUR_NAME/YOUR_REPO/issues",
   "history": [
@@ -129,12 +129,12 @@ window.RW_DATA = {
    "metrics": [
     {
      "name": "Story progress",
-     "pct": 80.0,
+     "pct": 80,
      "label": "Half the story"
     },
     {
      "name": "Rendering",
-     "pct": 85.0,
+     "pct": 85,
      "label": "Close to the console, minor glitches"
     },
     {
@@ -144,7 +144,7 @@ window.RW_DATA = {
     },
     {
      "name": "Stability",
-     "pct": 85.0,
+     "pct": 85,
      "label": "Rarely crashes"
     }
    ],
@@ -169,8 +169,12 @@ window.RW_DATA = {
    "download": "",
    "videos": [
     {
-     "url": "https://v.redd.it/137k5pow5w3i1",
-     "label": "Watch video"
+     "label": "Watch video",
+     "url": "https://v.redd.it/137k5pow5w3i1"
+    },
+    {
+     "url": "https://files.catbox.moe/ritram.mp4",
+     "label": ""
     }
    ],
    "updates": [
@@ -199,12 +203,12 @@ window.RW_DATA = {
    "metrics": [
     {
      "name": "Story progress",
-     "pct": 50.0,
+     "pct": 50,
      "label": "First act"
     },
     {
      "name": "Rendering",
-     "pct": 80.0,
+     "pct": 80,
      "label": "Close to the console, minor glitches"
     },
     {
@@ -214,7 +218,7 @@ window.RW_DATA = {
     },
     {
      "name": "Stability",
-     "pct": 90.0,
+     "pct": 90,
      "label": "Stable"
     }
    ],
@@ -240,8 +244,8 @@ window.RW_DATA = {
    "download": "",
    "videos": [
     {
-     "url": "https://www.reddit.com/r/FitGirlRepack/comments/1y5k8xu/actually_playable/",
-     "label": "Video on Reddit"
+     "url": "https://files.catbox.moe/ztfflc.mp4",
+     "label": ""
     }
    ],
    "updates": [],
@@ -261,16 +265,16 @@ window.RW_DATA = {
     "Verified by RecompWatch"
    ],
    "summary": "Belobug's VIctory fork runs on AMD Radeon; RecompWatch saw its near-console open world and mission gameplay at about 8 fps. The owner now reports ray tracing working on AMD; the README still describes the ray-tracing path as failing.",
-   "score": 79.0,
+   "score": 79,
    "metrics": [
     {
      "name": "Story progress",
-     "pct": 50.0,
+     "pct": 50,
      "label": "First act"
     },
     {
      "name": "Rendering",
-     "pct": 85.0,
+     "pct": 85,
      "label": "Close to the console, minor glitches"
     },
     {
@@ -280,7 +284,7 @@ window.RW_DATA = {
     },
     {
      "name": "Stability",
-     "pct": 70.0,
+     "pct": 70,
      "label": "Rarely crashes"
     }
    ],
@@ -327,26 +331,26 @@ window.RW_DATA = {
     "Verified by RecompWatch"
    ],
    "summary": "DexNom Runtime, a fork of VIctory for AMD Radeon, tested on a Radeon RX 7900 XTX. It builds on ZSlayerHQ's victory-world-runtime with its own fixes for shaders, texture streaming and GPU memory. RecompWatch has seen it running with ray-traced lighting working, the first AMD build on our board to get it: the open world looks close to the retail game, and it plays through missions at about 3-4 fps (about 1 fps with ray tracing on), rarely crashing.",
-   "score": 78.0,
+   "score": 78,
    "metrics": [
     {
      "name": "Story progress",
-     "pct": 50.0,
+     "pct": 50,
      "label": "First act"
     },
     {
      "name": "Rendering",
-     "pct": 90.0,
+     "pct": 90,
      "label": "Close to the console, minor glitches"
     },
     {
      "name": "Performance",
-     "pct": 10.0,
+     "pct": 10,
      "label": "3 FPS"
     },
     {
      "name": "Stability",
-     "pct": 70.0,
+     "pct": 70,
      "label": "Rarely crashes"
     }
    ],
@@ -393,12 +397,12 @@ window.RW_DATA = {
    "metrics": [
     {
      "name": "Story progress",
-     "pct": 25.0,
+     "pct": 25,
      "label": "First missions"
     },
     {
      "name": "Rendering",
-     "pct": 25.0,
+     "pct": 25,
      "label": "Shapes drawn, mostly unlit or black"
     },
     {
@@ -408,7 +412,7 @@ window.RW_DATA = {
     },
     {
      "name": "Stability",
-     "pct": 80.0,
+     "pct": 80,
      "label": "Rarely crashes"
     }
    ],
@@ -450,22 +454,22 @@ window.RW_DATA = {
    "metrics": [
     {
      "name": "Story progress",
-     "pct": 0.0,
+     "pct": 0,
      "label": "Stuck in the opening"
     },
     {
      "name": "Rendering",
-     "pct": 70.0,
+     "pct": 70,
      "label": "Lit, but major effects missing"
     },
     {
      "name": "Performance",
-     "pct": 10.0,
+     "pct": 10,
      "label": "3 FPS"
     },
     {
      "name": "Stability",
-     "pct": 0.0,
+     "pct": 0,
      "label": "Unknown"
     }
    ],
@@ -510,12 +514,12 @@ window.RW_DATA = {
    "metrics": [
     {
      "name": "Story progress",
-     "pct": 10.0,
+     "pct": 10,
      "label": "Prologue cleared"
     },
     {
      "name": "Rendering",
-     "pct": 20.0,
+     "pct": 20,
      "label": "Black or broken"
     },
     {
@@ -525,7 +529,7 @@ window.RW_DATA = {
     },
     {
      "name": "Stability",
-     "pct": 40.0,
+     "pct": 40,
      "label": "Crashes sometimes"
     }
    ],
@@ -570,12 +574,12 @@ window.RW_DATA = {
    "metrics": [
     {
      "name": "Story progress",
-     "pct": 0.0,
+     "pct": 0,
      "label": "Stuck in the opening"
     },
     {
      "name": "Rendering",
-     "pct": 0.0,
+     "pct": 0,
      "label": "Black or broken"
     },
     {
@@ -585,7 +589,7 @@ window.RW_DATA = {
     },
     {
      "name": "Stability",
-     "pct": 0.0,
+     "pct": 0,
      "label": "Unknown"
     }
    ],
@@ -628,26 +632,26 @@ window.RW_DATA = {
     "Runs: Minecraft Preview and Unicorn Overlord: playable"
    ],
    "summary": "Wine-style layer running game code natively. On its main branch GTA VI gets past its menus into the world for several testers, but the screen stays on a loading spinner and a GPU watchdog ends the run. Unverified.",
-   "score": 35.0,
+   "score": 35,
    "metrics": [
     {
      "name": "Story progress",
-     "pct": 0.0,
+     "pct": 0,
      "label": "–"
     },
     {
      "name": "Rendering",
-     "pct": 0.0,
+     "pct": 0,
      "label": "–"
     },
     {
      "name": "Performance",
-     "pct": 0.0,
+     "pct": 0,
      "label": "–"
     },
     {
      "name": "Stability",
-     "pct": 0.0,
+     "pct": 0,
      "label": "–"
     }
    ],
@@ -691,12 +695,12 @@ window.RW_DATA = {
    "metrics": [
     {
      "name": "Story progress",
-     "pct": 80.0,
+     "pct": 80,
      "label": "Half the story"
     },
     {
      "name": "Rendering",
-     "pct": 76.0,
+     "pct": 76,
      "label": "Close to the console, minor glitches"
     },
     {
@@ -706,7 +710,7 @@ window.RW_DATA = {
     },
     {
      "name": "Stability",
-     "pct": 90.0,
+     "pct": 90,
      "label": "Stable"
     }
    ],
@@ -750,22 +754,22 @@ window.RW_DATA = {
    "metrics": [
     {
      "name": "Story progress",
-     "pct": 80.0,
+     "pct": 80,
      "label": "Half the story"
     },
     {
      "name": "Rendering",
-     "pct": 70.0,
+     "pct": 70,
      "label": "Lit, but major effects missing"
     },
     {
      "name": "Performance",
-     "pct": 50.0,
+     "pct": 50,
      "label": "15 FPS"
     },
     {
      "name": "Stability",
-     "pct": 70.0,
+     "pct": 70,
      "label": "Rarely crashes"
     }
    ],
@@ -805,16 +809,16 @@ window.RW_DATA = {
     "No public code"
    ],
    "summary": "A private group's build on JoshuuDev's victory-amd fork of VIctory, verified by RecompWatch. It runs GTA VI with ray-traced lighting at about 3-5 fps, almost never crashes, and the owner rates its story progress at 80%. The in-game phone renders really well, and the map menu runs at a higher frame rate. It's built mostly for AMD and also works on NVIDIA, at a lower frame rate. Code not public.",
-   "score": 84.0,
+   "score": 84,
    "metrics": [
     {
      "name": "Story progress",
-     "pct": 80.0,
+     "pct": 80,
      "label": "Half the story"
     },
     {
      "name": "Rendering",
-     "pct": 85.0,
+     "pct": 85,
      "label": "Close to the console, minor glitches"
     },
     {
@@ -824,7 +828,7 @@ window.RW_DATA = {
     },
     {
      "name": "Stability",
-     "pct": 80.0,
+     "pct": 80,
      "label": "Rarely crashes"
     }
    ],
@@ -863,26 +867,26 @@ window.RW_DATA = {
     "No public code"
    ],
    "summary": "A private build on hyphennn's victory-fork of VIctory. RecompWatch confirmed a player moving around Lucia's prologue at about 3 fps; the owner now rates its story progress at 80%. Its rendering is ahead of the other builds, but code is not public.",
-   "score": 75.0,
+   "score": 75,
    "metrics": [
     {
      "name": "Story progress",
-     "pct": 80.0,
+     "pct": 80,
      "label": "Half the story"
     },
     {
      "name": "Rendering",
-     "pct": 80.0,
+     "pct": 80,
      "label": "Close to the console, minor glitches"
     },
     {
      "name": "Performance",
-     "pct": 10.0,
+     "pct": 10,
      "label": "3 FPS"
     },
     {
      "name": "Stability",
-     "pct": 0.0,
+     "pct": 0,
      "label": "Unknown"
     }
    ],
@@ -915,7 +919,7 @@ window.RW_DATA = {
     "GTA VI only"
    ],
    "summary": "C# layer and toolkit for GTA VI. It reports the game showing its logo, intro video and every first-run setup screen, answered by scripted input, then starting the story load, which fails on corrupted memory. Self-reported; no capture yet.",
-   "score": 30.0,
+   "score": 30,
    "works": [],
    "blocks": [],
    "stars": "88",
@@ -950,7 +954,7 @@ window.RW_DATA = {
     "Self-reported"
    ],
    "summary": "Static recompilation research turning Xbox Series code and shaders into Windows C++ and DXIL, with over 50 contributors. Footage the project shared shows GTA VI's menus, unstable. Its README now reports a modified diagnostic exe playing the intro and setup text; the original exe and the menus remain unverified.",
-   "score": 25.0,
+   "score": 25,
    "works": [],
    "blocks": [],
    "stars": "1.7k",
@@ -981,7 +985,7 @@ window.RW_DATA = {
     "Runs: The Matrix Awakens: menu + cinematic (Linux)"
    ],
    "summary": "Native-first layer for unpacked Xbox Series games, tested mostly on Linux through Proton. GTA VI's exe now draws its player-selection prompt at 4K; input, intro and gameplay aren't shown yet. Self-reported.",
-   "score": 20.0,
+   "score": 20,
    "works": [],
    "blocks": [],
    "stars": "231",
@@ -1010,7 +1014,7 @@ window.RW_DATA = {
     "GTA VI only"
    ],
    "summary": "Open continuation of Leonida after its repo went private. It documents GTA VI's exe running through about 12,000 D3D12 calls into its own render code before it stops; no frame yet. Self-reported, one RTX 4090.",
-   "score": 10.0,
+   "score": 10,
    "works": [],
    "blocks": [],
    "stars": "103",
@@ -1039,7 +1043,7 @@ window.RW_DATA = {
     "GTA VI only"
    ],
    "summary": "C stand-in DLLs and a debugger harness that run GTA VI's exe on Windows through its frame loop. It says the first UI screen now draws on a PC GPU, but shows no capture yet. Self-reported.",
-   "score": 10.0,
+   "score": 10,
    "works": [],
    "blocks": [],
    "stars": "37",
@@ -1067,7 +1071,7 @@ window.RW_DATA = {
     "Compatibility layer"
    ],
    "summary": "Rust layer with stand-in system DLLs and an early shader recompiler. GTA VI now runs to a frame loop of black frames, then the GPU hangs. Its shader path still uses stand-ins, and its stage counts don't match other projects'.",
-   "score": 10.0,
+   "score": 10,
    "works": [],
    "blocks": [],
    "stars": "36",
@@ -1096,7 +1100,7 @@ window.RW_DATA = {
     "GTA VI (Xbox Series)"
    ],
    "summary": "Day-old C++ layer with a PE loader, TLS setup and a small registry of Xbox functions, some of them stubs; its first runtime call just returns success. Its rendered frame comes from its own test, not a console title.",
-   "score": 10.0,
+   "score": 10,
    "works": [],
    "blocks": [],
    "stars": "3",
@@ -1455,7 +1459,7 @@ window.RW_DATA = {
     "API bridge"
    ],
    "summary": "Found that the console d3d12_xs uses the same 28 interface IDs as PC D3D12, so standard calls can be forwarded and only the console extensions need building.",
-   "score": 1.0,
+   "score": 1,
    "works": [],
    "blocks": [],
    "stars": "1",
@@ -1484,7 +1488,7 @@ window.RW_DATA = {
     "GTA VI only"
    ],
    "summary": "GTA VI-only translation layer with a PE mapper borrowed from Xbox2Windows, an early scalar shader lifter and a sample game that tests presentation and input.",
-   "score": 1.0,
+   "score": 1,
    "works": [],
    "blocks": [],
    "stars": "21",
@@ -1656,7 +1660,7 @@ window.RW_DATA = {
     "Repo gone (404)"
    ],
    "summary": "Made just for GTA VI, by Hookshot's author. Archived on Nov 23: its Discord vanished, the GitHub repo was deleted and the creator said he quit. Last result: the exe ran, frames stayed black.",
-   "score": 25.0,
+   "score": 25,
    "works": [],
    "blocks": [],
    "stars": "32k",
@@ -1687,7 +1691,7 @@ window.RW_DATA = {
     "Repo gone (404)"
    ],
    "summary": "Fork of AnyPS5 that tested whether the PS5 port tool's RDNA2 shader recompiler can handle the Xbox game. Archived on Nov 23: the repo answers 404, its owner's account is still active, and no DMCA notice is published.",
-   "score": 12.0,
+   "score": 12,
    "works": [],
    "blocks": [],
    "stars": "586",
@@ -1733,5 +1737,13 @@ window.RW_DATA = {
   }
  ],
  "scoringIntro": "One scale for every project, in two parts. Getting in is a ladder to 50%: groundwork fills the first 10%, then each step needs the one before it, up to Playable. Playing well fills the rest: how far you can play, how right it looks, how fast it runs and how long it keeps running. 100% is the whole game, finished.",
- "paid": []
+ "paid": [
+  {
+   "id": "f6435262",
+   "title": "SPECIAL GAMING FILES",
+   "desc": "files you might need",
+   "price": "40",
+   "k": "bWFnbmV0Oj94dD11cm46YnRpaDo0NjVkNmEwZWFjMzgxZTY4Y2E3NzExNWY0NGYxOWYwYzk2OGI5NTkwJnRyPXVkcDovL29wZW4udHJhY2tlci5jbDoxMzM3L2Fubm91bmNlICA7ICBodHRwczovL3d3dy51cGxvYWQuZWUvZG93bmxvYWQvMTk5ODU0MjEvZTRhOTBiYzU5YmRiMjM4YWVhN2IvZWFybHlfeG1hcy56aXA="
+  }
+ ]
 };
