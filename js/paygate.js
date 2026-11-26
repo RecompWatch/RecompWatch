@@ -8,11 +8,11 @@
 const CFG=window.RW_PAY={
   /* ▼▼▼ PASTE YOUR WALLET ADDRESSES HERE — one per network, leave '' to switch a network off ▼▼▼ */
   wallets:{
-    evm:'',          // ONE address covers ETH, USDT, USDC… on Ethereum, BNB Chain, Polygon, Arbitrum, Base, Optimism, Avalanche…
+    evm:'configured',          // ONE address covers ETH, USDT, USDC… on Ethereum, BNB Chain, Polygon, Arbitrum, Base, Optimism, Avalanche…
     btc:'',
     solana:'',
     trc20:'',        // Tron (USDT-TRC20)
-    ltc:'', doge:'', bitcoincash:'', ton:'', xmr:'494JGFr6rkpddPY1tFQAQk8VZ7zMynnqNa5AhNKzaD7i9jWQLTzzAL6Yp8UvBZo3SFNCmE5xL5LfT9CH3PtFcqKK8eUXUe4', zec:'', xrp:''
+    ltc:'', doge:'', bitcoincash:'', ton:'', xmr:'configured', zec:'', xrp:''
   },
   /* ▲▲▲ nothing else needs touching ▲▲▲ */
   cardWallet:'',   // CARD payouts: a USDC-on-Polygon wallet. Leave '' to reuse wallets.evm (same 0x… address works on Polygon)
