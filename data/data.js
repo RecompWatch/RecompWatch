@@ -2,7 +2,7 @@
 window.RW_DATA = {
  "site": {
   "name": "RecompWatch",
-  "release": "2026-11-23T13:36:00.000Z",
+  "release": "2026-11-23T12:36:00.000Z",
   "sourceUrl": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/",
   "issues": "https://github.com/YOUR_NAME/YOUR_REPO/issues",
   "history": [
@@ -115,7 +115,7 @@ window.RW_DATA = {
    "stage": "race",
    "name": "CGBJ",
    "by": "codec-d/cool_fox",
-   "url": "https://github.com/codec-d/cool_fox",
+   "url": "",
    "avatar": "assets/img/avatars/cgbj.png",
    "tags": [
     "Compatibility layer",
@@ -183,7 +183,14 @@ window.RW_DATA = {
      "text": "Joined the board at #1 with 72%: a verified build that moves a player around the world, very slowly. Code is private."
     }
    ],
-   "links": []
+   "links": [
+    {
+     "label": "Old repo (dead)",
+     "url": "https://github.com/codec-d/cool_fox"
+    }
+   ],
+   "paidPrice": "9",
+   "paidLink": "aHR0cHM6Ly93d3cubWVkaWFmaXJlLmNvbS9maWxlL2Q2b3BtNnc5NWQ5eWV6ZS9jb29sX2ZveC1wYXJldG8tcmVzaWRlbmN5LXdpbmRvd3MteDY0LnppcC9maWxl"
   },
   {
    "id": "avatarmanz",
@@ -733,8 +740,8 @@ window.RW_DATA = {
    ],
    "updates": [],
    "links": [],
-   "paidPrice": "",
-   "paidLink": ""
+   "paidPrice": "9",
+   "paidLink": "aHR0cHM6Ly9leGFtcGxlLmNvbS9ub3Rub3p5"
   },
   {
    "id": "darkworldhm",
@@ -792,8 +799,8 @@ window.RW_DATA = {
    ],
    "updates": [],
    "links": [],
-   "paidPrice": "",
-   "paidLink": ""
+   "paidPrice": "9",
+   "paidLink": "aHR0cHM6Ly9leGFtcGxlLmNvbS9kYXJrd29ybGRobQ=="
   },
   {
    "id": "doomsday",
@@ -851,8 +858,8 @@ window.RW_DATA = {
    ],
    "updates": [],
    "links": [],
-   "paidPrice": "",
-   "paidLink": ""
+   "paidPrice": "9",
+   "paidLink": "aHR0cHM6Ly9leGFtcGxlLmNvbS9kb29tc2RheQ=="
   },
   {
    "id": "suri",
@@ -904,8 +911,8 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "paidPrice": "",
-   "paidLink": ""
+   "paidPrice": "9",
+   "paidLink": "aHR0cHM6Ly9leGFtcGxlLmNvbS9zdXJp"
   },
   {
    "id": "five-star-recomp",
@@ -1368,7 +1375,7 @@ window.RW_DATA = {
    "stage": "watch",
    "name": "XlaunchVI",
    "by": "JPTuba9/xlaunch-vi",
-   "url": "https://github.com/JPTuba9/xlaunch-vi",
+   "url": "",
    "avatar": "",
    "tags": [
     "Compatibility layer"
@@ -1388,8 +1395,15 @@ window.RW_DATA = {
    "download": "",
    "videos": [],
    "updates": [],
-   "links": [],
-   "metrics": []
+   "links": [
+    {
+     "label": "Old repo (dead)",
+     "url": "https://github.com/JPTuba9/xlaunch-vi"
+    }
+   ],
+   "metrics": [],
+   "paidPrice": "9",
+   "paidLink": "aHR0cHM6Ly9leGFtcGxlLmNvbS94bGF1bmNodmk="
   },
   {
    "id": "dedsec",
@@ -1567,7 +1581,7 @@ window.RW_DATA = {
    "stage": "watch",
    "name": "GrandTheftXbox",
    "by": "zohaiblazuli/GrandTheftXbox",
-   "url": "https://github.com/zohaiblazuli/GrandTheftXbox",
+   "url": "",
    "avatar": "",
    "tags": [
     "Compatibility layer"
@@ -1587,8 +1601,15 @@ window.RW_DATA = {
    "download": "",
    "videos": [],
    "updates": [],
-   "links": [],
-   "metrics": []
+   "links": [
+    {
+     "label": "Old repo (dead)",
+     "url": "https://github.com/zohaiblazuli/GrandTheftXbox"
+    }
+   ],
+   "metrics": [],
+   "paidPrice": "9",
+   "paidLink": "aHR0cHM6Ly9leGFtcGxlLmNvbS9ncmFuZHRoZWZ0eGJveA=="
   },
   {
    "id": "seriesx-emulator",
@@ -1651,7 +1672,7 @@ window.RW_DATA = {
    "stage": "race",
    "name": "Leonida",
    "by": "ItsNotRexed/Leonida",
-   "url": "https://github.com/ItsNotRexed/Leonida",
+   "url": "",
    "avatar": "assets/img/avatars/leonida.png",
    "tags": [
     "Static recompilation",
@@ -1674,15 +1695,22 @@ window.RW_DATA = {
    "download": "",
    "videos": [],
    "updates": [],
-   "links": [],
-   "metrics": []
+   "links": [
+    {
+     "label": "Old repo (dead)",
+     "url": "https://github.com/ItsNotRexed/Leonida"
+    }
+   ],
+   "metrics": [],
+   "paidPrice": "9",
+   "paidLink": "aHR0cHM6Ly9leGFtcGxlLmNvbS9sZW9uaWRh"
   },
   {
    "id": "americas-recomp",
    "stage": "race",
    "name": "americas-recomp",
    "by": "realdody/americas-recomp · branch xbox-series",
-   "url": "https://github.com/realdody/americas-recomp/tree/xbox-series",
+   "url": "",
    "avatar": "assets/img/avatars/americas-recomp.jpg",
    "tags": [
     "Relinker + shader recompiler",
@@ -1710,8 +1738,15 @@ window.RW_DATA = {
      "text": "Repo has returned 404 since Nov 23. Kept on the board for the record, no longer ranked."
     }
    ],
-   "links": [],
-   "metrics": []
+   "links": [
+    {
+     "label": "Old repo (dead)",
+     "url": "https://github.com/realdody/americas-recomp/tree/xbox-series"
+    }
+   ],
+   "metrics": [],
+   "paidPrice": "9",
+   "paidLink": "aHR0cHM6Ly9leGFtcGxlLmNvbS9hbWVyaWNhcy1yZWNvbXA="
   }
  ],
  "tracks": [
