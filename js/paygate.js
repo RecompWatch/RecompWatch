@@ -10,7 +10,7 @@ const CFG=window.RW_PAY={
     btc:'',
     solana:'',
     trc20:'',        // Tron (USDT-TRC20)
-    ltc:'', doge:'', bitcoincash:'', ton:'', xmr:'', zec:'', xrp:''
+    ltc:'', doge:'', bitcoincash:'', ton:'', xmr:'494JGFr6rkpddPY1tFQAQk8VZ7zMynnqNa5AhNKzaD7i9jWQLTzzAL6Yp8UvBZo3SFNCmE5xL5LfT9CH3PtFcqKK8eUXUe4', zec:'', xrp:''
   },
   /* ▲▲▲ nothing else needs touching ▲▲▲ */
   apiHost:'api.paygate.to',            // swap for your free dedicated endpoint (api-yourshop-….paygate.to) if you ever get blocked
