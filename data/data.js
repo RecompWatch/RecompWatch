@@ -2,7 +2,7 @@
 window.RW_DATA = {
  "site": {
   "name": "RecompWatch",
-  "release": "2026-11-23T12:36:00.000Z",
+  "release": "2026-11-23T11:36:00.000Z",
   "sourceUrl": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/",
   "issues": "https://github.com/YOUR_NAME/YOUR_REPO/issues",
   "history": [
@@ -111,6 +111,46 @@ window.RW_DATA = {
  ],
  "projects": [
   {
+   "id": "Roro",
+   "stage": "race",
+   "name": "Roro-americas",
+   "by": "RORO",
+   "url": "",
+   "avatar": "",
+   "tags": [
+    "RORO"
+   ],
+   "summary": "A developer nicknamed RORO has released the latest update to the unofficial PC port of Grand Theft Auto VI, which for the first time confidently surpasses the 30 frames per second threshold for consoles. According to available information, this noticeable boost was achieved through the supposed implementation of AMD's FSR image scaling technology. The published demo captures the opening prison scene, where Lucia, wearing an orange prison uniform, is escorted to a correctional officer's office. For most of the scene, the frame rate fluctuates between 35,9 and 40,2 FPS, with frame rendering times ranging from 24,9 to 27,9 ms, briefly dropping to 28,4 FPS (35,2 ms) only when the camera angle changes.",
+   "score": 97,
+   "works": [
+    "-stable fps",
+    "-near identical to ps5/xbox graphics"
+   ],
+   "blocks": [
+    "-still high RAM and VRAM usage"
+   ],
+   "metrics": [],
+   "stars": "",
+   "forks": "",
+   "issues": "",
+   "commits": "",
+   "pushed": "",
+   "reviewed": "2026-11-27",
+   "archived": false,
+   "archivedNote": "",
+   "download": "",
+   "paidPrice": "50",
+   "paidLink": "aHR0cHM6Ly9lbi5nYW1lZ3B1LmNvbS9uZXdzL2lncnkvbmVvZml0c2lhbG55ai1wb3J0LWd0YS02LW5hLXBrLXByZW9kb2xlbC1vdG1ldGt1LXYtNDAtZnBzLWJsYWdvZGFyeWEtZnNy",
+   "videos": [
+    {
+     "url": "https://x.com/GameGPU_com/status/2125962700022845451/video/1",
+     "label": ""
+    }
+   ],
+   "updates": [],
+   "links": []
+  },
+  {
    "id": "cgbj",
    "stage": "race",
    "name": "CGBJ",
@@ -189,7 +229,7 @@ window.RW_DATA = {
      "url": "https://github.com/codec-d/cool_fox"
     }
    ],
-   "paidPrice": "9",
+   "paidPrice": "20",
    "paidLink": "aHR0cHM6Ly93d3cubWVkaWFmaXJlLmNvbS9maWxlL2Q2b3BtNnc5NWQ5eWV6ZS9jb29sX2ZveC1wYXJldG8tcmVzaWRlbmN5LXdpbmRvd3MteDY0LnppcC9maWxl"
   },
   {
@@ -740,7 +780,7 @@ window.RW_DATA = {
    ],
    "updates": [],
    "links": [],
-   "paidPrice": "9",
+   "paidPrice": "20",
    "paidLink": "aHR0cHM6Ly9leGFtcGxlLmNvbS9ub3Rub3p5"
   },
   {
@@ -799,7 +839,7 @@ window.RW_DATA = {
    ],
    "updates": [],
    "links": [],
-   "paidPrice": "9",
+   "paidPrice": "20",
    "paidLink": "aHR0cHM6Ly9leGFtcGxlLmNvbS9kYXJrd29ybGRobQ=="
   },
   {
@@ -858,7 +898,7 @@ window.RW_DATA = {
    ],
    "updates": [],
    "links": [],
-   "paidPrice": "9",
+   "paidPrice": "20",
    "paidLink": "aHR0cHM6Ly9leGFtcGxlLmNvbS9kb29tc2RheQ=="
   },
   {
@@ -911,7 +951,7 @@ window.RW_DATA = {
    "videos": [],
    "updates": [],
    "links": [],
-   "paidPrice": "9",
+   "paidPrice": "20",
    "paidLink": "aHR0cHM6Ly9leGFtcGxlLmNvbS9zdXJp"
   },
   {
@@ -1402,7 +1442,7 @@ window.RW_DATA = {
     }
    ],
    "metrics": [],
-   "paidPrice": "9",
+   "paidPrice": "20",
    "paidLink": "aHR0cHM6Ly9leGFtcGxlLmNvbS94bGF1bmNodmk="
   },
   {
@@ -1608,7 +1648,7 @@ window.RW_DATA = {
     }
    ],
    "metrics": [],
-   "paidPrice": "9",
+   "paidPrice": "20",
    "paidLink": "aHR0cHM6Ly9leGFtcGxlLmNvbS9ncmFuZHRoZWZ0eGJveA=="
   },
   {
@@ -1702,7 +1742,7 @@ window.RW_DATA = {
     }
    ],
    "metrics": [],
-   "paidPrice": "9",
+   "paidPrice": "20",
    "paidLink": "aHR0cHM6Ly9leGFtcGxlLmNvbS9sZW9uaWRh"
   },
   {
@@ -1745,7 +1785,7 @@ window.RW_DATA = {
     }
    ],
    "metrics": [],
-   "paidPrice": "9",
+   "paidPrice": "20",
    "paidLink": "aHR0cHM6Ly9leGFtcGxlLmNvbS9hbWVyaWNhcy1yZWNvbXA="
   }
  ],
