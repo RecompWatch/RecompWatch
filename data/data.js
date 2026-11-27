@@ -1,3 +1,4 @@
+/* RecompWatch data — edit via the admin page (or by hand). Payments: PayGate.to, wallets live in js/paygate.js */
 window.RW_DATA = {
  "site": {
   "name": "RecompWatch",
